@@ -325,6 +325,8 @@ cfg_if! {
         #[path = "solid.rs"] mod imp;
     } else if #[cfg(target_os = "espidf")] {
         #[path = "espidf.rs"] mod imp;
+    } else if #[cfg(all(windows, target_vendor = "rust9x"))] {
+        #[path = "rust9x.rs"] mod imp;
     } else if #[cfg(all(windows, target_vendor = "win7"))] {
         #[path = "windows7.rs"] mod imp;
     } else if #[cfg(windows)] {
